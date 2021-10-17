@@ -5,6 +5,9 @@
 #  /_/   /_/   /_/      Just some changes for my personal use
 #
 
+# Note: I don't use bash anymore if you want my updated alias's
+# or shell configurations use zsh :) or use whatver idc lol 
+
 # EXPORT
 export TERM="xterm-256color"                      # getting proper colors
 export HISTCONTROL=ignoredups:erasedups           # no duplicate entries
