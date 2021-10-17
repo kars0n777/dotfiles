@@ -1,0 +1,194 @@
+add audio/music/full-library/Lucki - PERCOCET (prod. F1lthy)-995363119.opus
+pl-create percocet
+clear 
+ce
+add audio/music/playlists/texca-tecca-9-28/
+add audio/music/playlists/vibes-xay/
+clear
+cleazr
+add audio/music/playlists/way-2-fast/
+pl-clear
+pl-create texca-tecca-9-28
+pl-rename satellite-crash
+add audio/music/discographies/fijimacintosh/satellite-crash/
+pl-create metalic-withdrawals
+add audio/music/playlists/lucki-mix/
+add audio/music/playlists/pokemon-lofi/
+pl-create pokemon-lofi
+add audio/music/playlists/lofi/
+add audio/m
+refresh 
+pl-create lofi
+add audio/music/full-library/juice-wrld-stuck-in-my-ways.opus
+add audio/music/full-library/.
+pl-rename in-my-fls
+pl
+add audio/music/discographies/juice-wrld/death-race-for-love/Ring Ring Feat. Clever-586696101.opus
+add audio/music/discographies/juice-wrld/death-race-for-love/
+pl-create juice-wrld
+add audio/music/playlists/im-gr8/
+pl-create im-gr8
+pl-create lucki-mixxx
+pl-create way-2-fasttt t
+pl-create vibez-xayvicious
+live-filter :
+add audio/music/playlists/hyper/
+pl-create hyperrrrr
+add audio/music/discographies/xxxtentacion/mo2/
+pl-create mo2 
+add audio/music/discographies/kanye-west/donda/
+pl-create donda-kanye
+add audio/music/discographies/drake/certified-lover-boy/
+pl-create clb-drake 
+live-filter 
+add audio/music/full-library/
+add
+player-next
+pl-rename Likes-All
+pl-rename 
+pl-rename ! full-library
+pl-rename
+pl-create full-library
+add audio/new-music-opus/full-library/
+add audio/music/lucki-mix/
+add audio/music/lofi/
+add audio/music/travis-scott-mix/
+pl-create travis-scott-mix
+add travis-scott-mix
+add audio/music/mix-uninportant-deko-ft-yameii/
+addj 
+pl-create 
+pl-create lucki-mix
+add audio/music/Likes-All/
+pl-create mix-unimportant
+add audio/music/Juice WRLD/spiderman/Hide-uYHNdTPV7pM.flac
+add audio/music/Juice WRLD/Frankies Unreleased 999/Stuck In My Ways.mp3
+pl-rename hide-stuckinmyways
+pl-rename  
+pl-create hide-stuckinmyways\
+add audio/music/Juice WRLD/spiderman/
+add AppImages/
+add audio/music/way-2-fast/
+add audio/music/ 
+add audio/music/xayvicious-vibes/
+pl-create way-2-fast
+pl-create xayvicious-vibes
+pl-de
+pl-create xayvicious-vibes way-2-fast
+add audio/music/kanyewest-donda/
+pl-create kanyewest-donda
+pl_create
+add audio/music/drake-certified-lover-boy/
+set pl_sort=title
+set pl_sort= order
+set pl_sort= <=discnumber
+set pl_sort<=discnumber
+set pl_sort=tracknumber
+set pl_sort
+set pl_sort!=filename
+set pl_sort=!filename
+set altformat_playlist= %f%= %d 
+set pl_sort=filename>
+filter -F
+set pl_sort=media
+set pl_sort=discnumber
+set pl_sort=originaldate
+set pl_sort=-tracknumber
+set pl_sort=filename
+set pl_sort=filenam
+set pl_sort=filemtime
+set pl_sort=
+set pl_sort=filename-
+set format_playlist= %-25%a %-15%l %3n. %t%= %y %d
+set format_playlist= %-25%a %-1
+set format_playlist= %F
+set format_playlist= %f%= %6{rg_track_gain} dB  %8{rg_track_peak}
+filter %F
+lib_sort
+lib_sort filename
+pl_sort 
+filter <filename>
+filter filename<1>
+filter filename>
+filter filename<
+filter =<f
+filter =f
+filter short ~f
+filter ~f
+filter d
+filter format_titile
+filter title
+filter 
+filter filename
+format_playlist
+pl_sort filename
+fset-playlist ~f
+fset ~f
+filter -f
+filter trackname
+format_title
+format
+format-current
+pwd
+trackname
+format_playlist trackname
+format_playlist 
+altformat_title
+pl-create drake-clb
+pl-new drake-clb
+pl_new drake-clb
+add ~/audio/music/Ambient/
+add 1.6TB HDD/ 
+fset mp3=filename="*.mp3"
+add audio/music/
+player-prev
+w
+vol =
+vol [-]10[%])
+vol [-]10[%]
+vol [-]10
+vol [--]10[%]
+vol [++]10[%]
+vol [+-]10[%]
+vol [-10]
+vol -10
+vol +10
+vol [--]
+add audio/music/Virtual WRLD/
+add 
+pl-rename ! Likes-All
+pl-rename !Likes-All
+pl-rename Juice WRLD
+add audio/music/Juice WRLD/
+add audio/music/Game Music/
+add audio/music/Ambient/
+ad
+delete
+add audio/music/Slowed+Lofi/
+pl-remove Likes-All
+clear -p
+add -p audio/music/Slowed+Lofi/
+pl-create fijimacintosh
+pl-create Virtual World
+pl-create Juice-WRLD-Released
+pl-create Grady Glozart
+pl-create cerified-lover-boy
+pl-create Slowed+Lofi
+pl-create Game Music
+pl-create Ambient
+pl-rename default Likes-All
+echo
+colorscheme dracula
+clear -l
+search-next
+pl_new
+p new
+rand
+player-play
+player-play rand
+player-play shuffle
+re
+shuffle
+add -p audio/music/Likes-All/
+add audio/music/Likes-All/ -p
+player play rand
