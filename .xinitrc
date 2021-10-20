@@ -1,17 +1,18 @@
-# Compositor
+## System
 picom &
+lxsession &
 
-# Keyboard Shortcuts
+## Appearence
+feh --bg-fill ~/pictures/wallpapers/serial-experiments-lain-room-1514392856.jpg &
+
+## Panel
+slstatus &
+blueman-applet & 
+volumeicon &
+
+## Keyboard
+xmodmap ~/.Xmodmap &
 sxhkd &
 
-# Status bar things
-slstatus &
-
-# Resolution
-xrandr -s 1920x1080 &
-
-# Wallpaper
-feh --bg-fill ~/pictures/wallpapers/serial-experiments-lain-room-1514392856.jpg
-
-# dwm
-exec /usr/local/bin/dwm
+## WM
+exec dwm  

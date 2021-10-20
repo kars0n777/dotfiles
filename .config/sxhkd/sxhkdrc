@@ -10,7 +10,7 @@
 
 # Kitty is hardcoded into launching terminal programs,
 # but if you use a different terminal all you need to
-# do is replace "kitty" with the terminal of your choice
+# do is replace "st" with the terminal of your choice
 
 ### ARandR
 super + shift + a
@@ -25,7 +25,7 @@ super + shift + b
 
 ### Bpytop System Monitor
 ctrl + shift + Escape 
-    kitty bpytop
+    st bpytop
 
 ### Calculator (KCalc)
 super + shift + c
@@ -33,7 +33,7 @@ super + shift + c
 
 ### Cava Music Visualizer
 super + alt + a
-    kitty cava 
+    st cava 
 
 ### Chatterino
 super + shift + h
@@ -41,7 +41,7 @@ super + shift + h
 
 ### CMUS Music Player
 #alt + shift + c
-#    kitty cmus
+#    st cmus
 
 #alt + shift + {space, d, a, w, s, e, q, r, f}
 #    cmus-remote {-u,-n,-r,-v +5%,-v -5%,-k +10,-k -10,-R,-S}
@@ -56,6 +56,7 @@ super + alt + d
 
 ### Dolphin File Manager
 super + 6
+    dolphin
 
 ### Element Desktop Matrix Client
 super + alt + m
@@ -81,13 +82,13 @@ super + k
 super + comma 
     keepassxc
 
-### Kitty Terminal 
-super + Return 
-    kitty
+### Simple Terminal 
+#super + Return 
+   #st
 
 ### LF File Manager
 super + y
-    kitty lf
+    st lf
 
 ### LibreOffice Writer
 super + ~ 
@@ -110,7 +111,7 @@ super + m
 
 ### MOC Music Player
 alt + shift + c
-    kitty mocp
+    st mocp
 
 alt + shift + {space, d, a, w, s, e, q, r, f}
     mocp + {-G,-f,-r,-v +5,-v -5,-k +10s,-k -10s,-t r,-t shuffle}
@@ -126,6 +127,10 @@ super + p
 ### VirtualBox
 super + 8
     VirtualBox %U
+
+### Pavu Control
+super + alt + v
+    pavucontrol
 
 ### PokeMMO
 super + i
@@ -147,7 +152,7 @@ super + grave
     scrcpy
 
 ### Steam
-super + s
+super + alt + s
     /us/bin/steam-runtime %U
 
 ### Tor Browser
@@ -176,7 +181,7 @@ super + shift + o
     brave https://odysee.com/$/dashboard
 
 ### Soundcloud
-super + shift + s 
+super + shift + ctrl + s 
     brave https://soundcloud.com/you/library
 
 ### Twitch
@@ -201,22 +206,22 @@ super + shift + k
 
 ### zshrc 
 super + alt + z
-    kitty nvim ~/.zshrc
+    st nvim ~/.zshrc
 
 ### mpv.conf
 super + shift + p
-    kitty nvim ~/.config/mpv/mpv.conf
+    st nvim ~/.config/mpv/mpv.conf
 
 super + alt + p 
-    kitty nvim ~/.config/mpv/input.conf
+    st nvim ~/.config/mpv/input.conf
 
 ### sxhkdrc (this file)
 super + alt + x
-    kitty nvim ~/.config/sxhkd/sxhkdrc
+    st nvim ~/.config/sxhkd/sxhkdrc
 
 ### daily board
 super + alt + t
-    kitty nvim ~/Documents/board.txt
+    st nvim ~/Documents/board.txt
 
 
 
@@ -227,7 +232,7 @@ super + ctrl + alt + shift + F12
     systemctl hibernate
 
 ### wmctrl fullscreen
-F11
+Home
     wmctrl -r ':ACTIVE:' -b toggle,fullscreen
 
 ### Android Tablet as Monitor
