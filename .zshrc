@@ -24,6 +24,52 @@ export VISUAL="nvim"
 ### SET VI MODE ###
 # Comment this line out to enable default emacs-like bindings
 bindkey -v
+export KEYTIMEOUT=1
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.style ':completion:*' menu select
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select () {
+    case $KEYMAP in
+        vicmd) echo -ne '\e[1 q';;      # block
+        viins|main) echo -ne '\e[5 q';; # beam
+    esac
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Use lf to switch directories and bind it to ctrl-o
+lfcd () {
+    tmp="$(mktemp)"
+    lf -last-dir-path="$tmp" "$@"
+    if [ -f "$tmp" ]; then
+        dir="$(cat "$tmp")"
+        rm -f "$tmp" >/dev/null
+        [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
+    fi
+}
+bindkey -s '^o' 'lfcd\n'
+
+bindkey -s '^a' 'bc -lq\n'
+
+bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
+
+bindkey '^[[P' delete-char
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -106,13 +152,9 @@ alias fgrep='fgrep --color=auto'
 #alias rm='rm -i'
 
 #ls
-alias ls='exa --group-directories-first --icons'
+alias ls='exa --group-directories-first --icons -a'
 alias lg='exa --group-directories-first --icons | grep'
-alias sl='exa --group-directories-first --icons'
-alias la='exa --group-directories-first --icons -a'
-alias ll='exa --group-directories-first --icons -l'
-alias lal='exa --group-directories-first --icons -la'
-alias lla='exa --group-directories-first --icons -la'
+alias ll='exa --group-directories-first --icons -la'
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
@@ -170,18 +212,18 @@ alias z='zathura'
 alias pcs='pokemon-colorscripts -r'
 #alias lf='lfrun'
 alias sxiv='sxiv -a' 
-alias ani-cli='~/1.6TB\ HDD/github/ani-cli/ani-cli'
-alias ani='~/1.6TB\ HDD/github/ani-cli/ani-cli'
+alias ani-cli='~/1tb-hdd/github/ani-cli/ani-cli'
+alias ani='~/1tb-hdd/github/ani-cli/ani-cli'
 
 # Directorys
-alias dow='cd ~/Downloads/'
-alias doc='cd ~/Documents/'
+alias dow='cd ~/downloads/'
+alias doc='cd ~/documents/'
 alias aud='cd ~/audio/'
 alias mus='cd ~/audio/music/'
-alias pic='cd ~/Pictures/'
-alias vid='cd ~/Videos/'
+alias pic='cd ~/pictures/'
+alias vid='cd ~/videos/'
 alias con='cd ~/.config/'
-alias 1='cd ~/1.6TB\ HDD/'
+alias 1='cd ~/1tb-hdd/'
 alias sxiv='sxiv -a' 
 alias pv='sudo protonvpn '
 #alias moc='mocp'

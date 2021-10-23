@@ -74,9 +74,13 @@ super + g
 super + alt + g
     glava
 
+### i3lock (lock screen)
+super + Caps_Lock 
+    i3lock -f -t -i ~/pictures/serial-experiments-lain-room-1514392856.png
+    
 ### Kdenlive Video Editor
 super + k
-    /home/karson777/AppImages/kdenlive-21.04.0-x86_64_54800d1b51f25dc3dfdc073117072881.appimage 
+    /home/karson777/1tb-hdd/appimages/kdenlive-21.08.2-x86_64.appimage
 
 ### KeepassXC Password Manager
 super + comma 
@@ -233,6 +237,9 @@ super + ctrl + alt + shift + F12
 
 ### wmctrl fullscreen
 Home
+    wmctrl -r ':ACTIVE:' -b toggle,fullscreen
+
+alt + f 
     wmctrl -r ':ACTIVE:' -b toggle,fullscreen
 
 ### Android Tablet as Monitor
