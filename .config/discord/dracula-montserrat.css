@@ -1,0 +1,717 @@
+/* Dracula theme + modifications C69 made */
+
+:root {
+  /* Dracula Colors */
+  --dracula-background: #282a36 !important;
+  --dracula-current-line: #44475a !important;
+  --dracula-selection: #44475a !important;
+  --dracula-foreground: #f8f8f2 !important;
+  --dracula-comment: #6272a4 !important;
+  --dracula-cyan: #8be9fd !important;
+  --dracula-green: #50fa7b !important;
+  --dracula-orange: #ffb86c !important;
+  --dracula-pink: #ff79c6 !important;
+  --dracula-purple: #bd93f9 !important;
+  --dracula-red: #ff5555 !important;
+  --dracula-yellow: #f1fa8c !important;
+  /* Discord Root Colors */
+  --background-primary: var(--dracula-background) !important;
+  --background-secondary: var(--dracula-background) !important;
+  --background-secondary-alt: var(--dracula-background) !important;
+  --background-tertiary: var(--dracula-background) !important;
+  --background-accent: var(--dracula-current-line) !important;
+  --background-floating: var(--dracula-background) !important;
+  --activity-card-background: var(--dracula-background) !important;
+  --interactive-normal: var(--dracula-foreground) !important;
+  --channeltextarea-background: var(--dracula-selection) !important;
+  --rs-online-color: var(--dracula-green) !important;
+  --rs-idle-color: var(--dracula-orange) !important;
+  --rs-dnd-color: var(--dracula-red) !important;
+  --rs-offline-color: var(--dracula-selection) !important;
+  --rs-streaming-color: var(--dracula-purple) !important;
+  --rs-invisible-color: var(--dracula-comment) !important;
+  --interactive-muted: var(--dracula-comment) !important;
+}
+
+:root * {
+  border-radius: 0 !important;
+}
+
+.da-acronym {
+  --background-primary: var(--dracula-selection) !important;
+}
+
+.da-repliedMessage {
+  --background-accent: var(--dracula-selection) !important;
+}
+
+.container-1D34oG.da-container {
+  background-color: var(--dracula-background) !important;
+}
+
+.wrapper-1BJsBx.selected-bZ3Lue .childWrapper-anI2G9,
+.wrapper-1BJsBx:hover .childWrapper-anI2G9 {
+  background-color: var(--dracula-selection) !important;
+}
+
+.theme-dark
+  .scrollerThemed-2oenus.themedWithTrack-q8E3vB
+  .scroller-2FKFPG::-webkit-scrollbar-track-piece {
+  background-color: var(--dracula-selection) !important;
+  border: 4px solid var(--dracula-background) !important;
+  border-radius: 8px !important;
+}
+
+/* Syntax Highlighing in Code Blocks*/
+code {
+  color: var(--dracula-foreground) !important;
+}
+span.hljs-built_in {
+  color: var(--dracula-purple) !important;
+}
+span.hljs-keyword {
+  color: var(--dracula-pink) !important;
+}
+span.hljs-title {
+  color: var(--dracula-cyan) !important;
+}
+span.hljs-attr {
+  color: var(--dracula-foreground) !important;
+}
+span.hljs-string {
+  color: var(--dracula-yellow) !important;
+}
+span.hljs-number {
+  color: var(--dracula-purple) !important;
+}
+span.hljs-symbol {
+  color: var(--dracula-orange) !important;
+}
+span.hljs-meta {
+  color: var(--dracula-foreground) !important;
+}
+span.hljs-meta-keyword {
+  color: var(--dracula-pink) !important;
+}
+span.hljs-meta-string {
+  color: var(--dracula-orange) !important;
+}
+
+/* Extra Shizz */
+
+* {
+  font-family: "Montserrat" !important;
+}
+
+.unread-1xRYoj {
+  color: var(--dracula-green);
+}
+
+.closeButton-1tv5uR {
+  color: var(--dracula-purple);
+}
+
+.name-uJV0GL {
+  color: var(--dracula-purple);
+}
+
+.defaultColor-1_ajX0 {
+  color: var(--dracula-purple);
+}
+
+.item-2kk8m {
+  color: var(--dracula-pink);
+}
+
+.name-1jkAdW {
+  color: var(--dracula-foreground);
+}
+
+.item-PXvHYJ.themed-OHr7kt {
+  color: var(--dracula-foreground);
+}
+
+.homeIcon-FuNwkv {
+  color: var(--dracula-foreground);
+}
+
+.bodyInnerWrapper-Z8WDxe {
+  color:var(--dracula-foreground);
+}
+
+.label-22pbtT {
+  color: var(--dracula-purple);
+}
+
+.username-1A8OIy,
+.roleColor-rz2vM0 {
+  filter: brightness(100%);
+}
+
+/* Status Colours (thanks DoggyBootsy for making it) */
+
+[mask^="url(#svg-mask-status-online"] {
+  fill: var(--dracula-green);
+}
+[mask^="url(#svg-mask-status-idle"] {
+  fill: var(--dracula-orange);
+}
+[mask^="url(#svg-mask-status-dnd"] {
+  fill: var(--dracula-red);
+}
+[mask^="url(#svg-mask-status-streaming"] {
+  fill: var(--dracula-purple);
+}
+[mask^="url(#svg-mask-status-offline"] {
+  fill: rgb(116, 127, 141);
+}
+
+/* Garbage that am not gonna fix - C69
+
+IDFK what is this but meh:
+
+.side-8zPYf6 {
+  color: var(--dracula-purple);
+}
+
+.body-3iLsc4 {
+  color: var(--dracula-selection);
+}
+
+*/
+
+/* Status Scrollbar by Mackenzie */
+.root-SR8cQa .activity-1ythUs {
+  overflow: auto;
+}
+.root-SR8cQa .activity-1ythUs::-webkit-scrollbar {
+  height: 5px;
+}
+.root-SR8cQa .activity-1ythUs::-webkit-scrollbar-track {
+  border-radius: 4px;
+  margin-left: 18px;
+  margin-right: 18px;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.root-SR8cQa .activity-1ythUs::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: var(--header-secondary);
+}
+
+/* Remove the text from the server popup (say Server Boost, Server Settings, etc) by Doggyboostsy */
+#guild-header-popout {
+  width: fit-content;
+}
+#guild-header-popout .scroller-3BxosC,
+#guild-header-popout [role="group"] {
+  display: flex;
+  flex-direction: row;
+  -webkit-box-orient: horizontal;
+}
+#guild-header-popout .scroller-3BxosC .item-1tOPte,
+#guild-header-popout [role="group"] .item-1tOPte {
+  width: 32px;
+}
+#guild-header-popout .scroller-3BxosC .iconContainer-2-XQPY,
+#guild-header-popout [role="group"] .iconContainer-2-XQPY {
+  margin: 0;
+  transform: translate(-1px, 0);
+}
+#guild-header-popout .scroller-3BxosC .label-22pbtT,
+#guild-header-popout [role="group"] .label-22pbtT {
+  display: none;
+}
+
+/* Replace the black/gray colour of popups by KayoticCarnige and colour changed by C69 */
+/* Popup Thing :p */
+:root {
+  --popup-color: #bd93f9;
+}
+
+.tooltipPrimary-1d1ph4 {
+  background: var(--popup-color) !important;
+}
+
+.tooltipPointer-3ZfirK {
+  border-top-color: var(--popup-color) !important;
+}
+/* Cooler message buttons by Mackenzie */
+.message-2qnXI6 .wrapper-2aW0bm .button-1ZiXG9 {
+  margin: 0 2px;
+  border-radius: 5px;
+  background-color: var(--background-tertiary);
+}
+
+.message-2qnXI6 .wrapper-2aW0bm .button-1ZiXG9:hover {
+  background-color: var(--background-modifier-selected);
+}
+
+/* Mute icon + text in servers that you're muted by Pukima */
+.muteText-gutGxh {
+  color: var(--dracula-red);
+  margin-top: 3px;
+  margin-left: 1.5px;
+  background: url("https://svgur.com/i/W9K.svg") no-repeat;
+  background-size: 23px;
+}
+
+.muteText-gutGxh::before {
+  content: "‎‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎  ‎‏‏‎ ‎‏‏‏‏‎ ‎‎‏‏‎ ‎";
+}
+
+/* Modern Profile Pop-ups by andr0id*/
+.protip-YaFfgO {
+  display: none;
+}
+.headerText-2sdzFM {
+  display: block;
+  position: relative;
+  left: 50px;
+  bottom: 65px;
+  max-height: 0px;
+  max-width: 125px;
+}
+.avatarWrapper-3H_478 {
+  right: 65px;
+  padding: 2px;
+}
+.headerTagWithNickname-3IthZD {
+  max-width: 115px;
+}
+.px-10SIf7.botTag-2WPJ74 {
+  background-color: rgba(255, 255, 255, 0.438);
+}
+.customStatus-1bh2V9 {
+  margin-top: 0px !important;
+}
+.avatarHint-1qgaV3 {
+  right: 65px;
+  padding: 2px;
+}
+/* Cooler Mentions by andr0id*/
+.wrapper-3WhCwL {
+  color: white;
+  background-color: #2b2b2b;
+  padding-left: 6px;
+  padding-right: 6px;
+  transition: 0.5s;
+}
+.wrapper-3WhCwL:hover {
+  background-color: #0f0f0f;
+  transition: 0.5s;
+}
+
+/* Resizing the Emoji and making it large */
+.emojiSection-3Fb9ix img {
+  margin: auto;
+  min-width: 80%;
+  height: auto !important;
+}
+/* Resizing the Emoji and making it large End */
+
+/* Text Wrapping */
+.emojiSection-3Fb9ix > .noWrap-3jynv6,
+.emojiSection-3Fb9ix {
+  flex: wrap;
+  flex-direction: column !important;
+}
+/* Text Wrapping End */
+
+/* Adjusting the text weight and aligning it to center */
+.emojiName-27Bjxw {
+  font-weight: 600;
+  margin-top: 8px;
+  text-align: center;
+}
+/* Adjusting the text weight and aligning it to center End */
+/* Show date of edits by DoggyBootsy */
+.cozyMessage-3V1Y8y:not(.systemMessage-1I9LCe)
+  .markup-2BOw-j
+  .timestampInline-yHQ6fX
+  > [aria-label]::after {
+  content: "-(" attr(aria-label) ")";
+  font-size: 0.625rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* Make Emote preview thingys bigger by Awish */
+/* Resizing the Emoji and making it large */
+.emojiSection-3Fb9ix img {
+  margin: auto;
+  min-width: 80%;
+  height: auto !important;
+}
+/* Resizing the Emoji and making it large End */
+
+/* Text Wrapping */
+.emojiSection-3Fb9ix > .noWrap-3jynv6,
+.emojiSection-3Fb9ix {
+  flex: wrap;
+  flex-direction: column !important;
+}
+/* Text Wrapping End */
+
+/* Adjusting the text weight and aligning it to center */
+.emojiName-27Bjxw {
+  font-weight: 600;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* Remove inventory/nitro/stage text */
+#private-channels > [class*="content-"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+}
+#private-channels > [class*="content-"] > a:not([href*="/channels/@me/"]) {
+  flex-grow: 1;
+  margin-top: 8px !important;
+  margin-left: 0;
+}
+#private-channels
+  > [class*="content-"]
+  > a:not([href*="/channels/@me/"]):first-of-type {
+  margin-left: 8px !important;
+}
+#private-channels
+  > [class*="content-"]
+  > a:not([href*="/channels/@me/"])
+  [class*="layout-"] {
+  justify-content: center;
+  padding: 0 !important;
+}
+#private-channels
+  > [class*="content-"]
+  > a:not([href*="/channels/@me/"])
+  [class*="avatar-"] {
+  margin: 0 !important;
+}
+#private-channels
+  > [class*="content-"]
+  > a:not([href*="/channels/@me/"])
+  [class*="content-"] {
+  display: none;
+}
+#private-channels
+  > [class*="content-"]
+  > a:not([href*="/channels/@me/"])
+  [class*="children-"] {
+  position: absolute;
+  transform: translate(4px, 8px);
+  box-shadow: 0 0 0 3px var(--background-secondary);
+  border-radius: 100px;
+}
+#private-channels > [class*="content-"] > h2 {
+  width: 100%;
+}
+#private-channels > [class*="content-"] > a[href*="/channels/@me/"] {
+  width: 100%;
+}
+
+/*http link as red*/
+
+a[href^="http://"]
+{
+  color: var(--dracula-red);
+}
+
+/*https link as red*/
+
+a[href^="https://"]
+{
+  color: var(--dracula-green);
+}
+
+/* Scrollbar for Serverlist by KayoticCarnige */
+.none-2Eo-qx {
+  scrollbar-width: auto !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  margin-right: 3px;
+}
+
+.none-2Eo-qx:hover::-webkit-scrollbar {
+  width: 0.25em !important;
+  border-radius: 25px;
+  height: 0px !important;
+  background: transparent !important;
+}
+
+.none-2Eo-qx::-webkit-scrollbar-thumb {
+  background: var(--background-accent);
+  border-radius: 25px;
+}
+
+/* Remove your phone number from settings by Mackenzie */
+.accountProfileCard-1XCH88 .field-1HUseB:last-child .size16-1P40sf {
+  --no-phone-number-text: "Nothing to see here!";
+  color: transparent;
+}
+.accountProfileCard-1XCH88 .field-1HUseB:last-child .size16-1P40sf::before {
+  color: var(--header-primary);
+  content: var(--no-phone-number-text, "1-800-SUSSY");
+}
+.accountProfileCard-1XCH88
+  .field-1HUseB:last-child
+  .size16-1P40sf
+  > .lookLink-9FtZy- {
+  transform: translateX(-88px);
+}
+
+/* fix that pesky activities bug by Davri */
+.assetsLargeMaskVoiceChannel-2k1oGM {
+  -webkit-mask-size: cover;
+}
+
+/* Center the emoji the status while on profile by botato */
+.customStatus-oN4ZZY
+  > .customStatusEmoji-3a2-Zo.customStatusSoloEmoji-1tDhmL:only-child {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/* make options colored and such */
+#message-actions-pin,
+#message-pin,
+#message-unpin {
+  color: skyblue;
+}
+#message-actions-pin:hover,
+#message-pin:hover,
+#message-unpin:hover {
+  background-color: "-";
+  color: #fff;
+}
+#message-actions-reply,
+#message-reply {
+  color: khaki;
+}
+#message-actions-reply:hover,
+#message-reply:hover {
+  background-color: #c5bb5d;
+  color: #fff;
+}
+#message-actions-thread,
+#message-thread {
+  color: #69c069;
+}
+#message-actions-thread:hover,
+#message-thread:hover {
+  background-color: #5dbd5d;
+  color: #fff;
+}
+#message-actions-mark-unread,
+#message-mark-unread {
+  color: plum;
+}
+#message-actions-mark-unread:hover,
+#message-mark-unread:hover {
+  background-color: #c27ec2;
+  color: #fff;
+}
+#message-actions-copy-link,
+#message-copy-link {
+  color: lightseagreen;
+}
+#message-actions-copy-link:hover,
+#message-copy-link:hover {
+  background-color: #199c96;
+  color: #fff;
+}
+#message-actions-tts,
+#message-tts {
+  color: var(--brand-experiment);
+}
+#message-actions-tts:hover,
+#message-tts:hover {
+  background-color: var(--brand-experiment);
+  color: #fff;
+}
+#message-actions-copy-id,
+#message-devmode-copy-id {
+  color: lightsalmon;
+}
+#message-actions-copy-id:hover #message-devmode-copy-id:hover {
+  background-color: lightsalmon;
+  color: #fff;
+}
+#message-edit,
+#message-actions-edit {
+  color: steelblue;
+}
+#message-edit:hover,
+#message-actions-edit:hover {
+  background-color: steelblue;
+  color: #fff;
+}
+#message-add-reaction {
+  color: goldenrod;
+}
+#message-add-reaction:hover {
+  background-color: goldenrod;
+  color: #fff;
+}
+
+/* White badges (on hover) by... uhh... how do i put your name here? */
+/* doesn't work that well on goosemod tho */
+.clickable-17BDii:hover,
+.powercord-badge-wrapper:hover {
+  filter: brightness(500%) !important;
+}
+
+/* nebula user popout by heckbound */
+:root {
+  --primary-rounding: 5px;
+  --primary-spacing: 10px;
+  --secondary-spacing: 20px;
+  --secondary-rounding: 10px;
+}
+.userPopout-xaxa6l {
+  background-color: var(--background-secondary-alt);
+  border-radius: var(--primary-rounding);
+}
+.userPopout-xaxa6l .headerNormal-3KXFBt {
+  margin: var(--primary-spacing);
+  margin-bottom: 0 !important;
+}
+.userPopout-xaxa6l .headerNormal-3KXFBt .banner-2QYc2d {
+  background-color: var(--background-secondary) !important;
+  border-radius: var(--primary-rounding);
+  height: 120px;
+  width: 100%;
+}
+.userPopout-xaxa6l .headerNormal-3KXFBt .bannerPremium-2hSAwz {
+  filter: brightness(0.3);
+}
+.userPopout-xaxa6l .avatarWrapper-3r9PdD {
+  left: var(--secondary-spacing);
+  top: var(--secondary-spacing);
+}
+.userPopout-xaxa6l .avatarWrapper-3r9PdD .avatar-37jOim {
+  background-color: transparent;
+  border-radius: var(--primary-rounding);
+  height: 99px !important;
+  width: 90px !important;
+  border: none;
+}
+.userPopout-xaxa6l
+  .avatarWrapper-3r9PdD
+  .avatar-37jOim
+  .mask-1l8v16
+  foreignObject {
+  mask: none;
+}
+.userPopout-xaxa6l
+  .avatarWrapper-3r9PdD
+  .avatar-37jOim
+  .mask-1l8v16
+  foreignObject
+  .avatar-VxgULZ {
+  background-color: var(--background-primary);
+  border-radius: var(--primary-rounding);
+}
+.userPopout-xaxa6l
+  .avatarWrapper-3r9PdD
+  .avatar-37jOim
+  .mask-1l8v16
+  .pointerEvents-2zdfdO {
+  user-select: none !important;
+  ry: var(--primary-rounding);
+  height: 16px !important;
+  width: 16px !important;
+  mask: none;
+  x: 60;
+  y: 60;
+}
+.userPopout-xaxa6l .avatarWrapper-3r9PdD .avatarHint-2A3RNb {
+  border-radius: var(--primary-rounding);
+  height: 99px;
+  width: 99px;
+  left: 0;
+  top: 0;
+}
+.userPopout-xaxa6l .avatarWrapper-3r9PdD .avatarHint-2A3RNb foreignObject {
+  mask: none;
+}
+.userPopout-xaxa6l .headerTop-3vNv-a {
+  padding: var(--secondary-spacing) 0 0 0;
+  right: var(--primary-spacing);
+  position: absolute;
+  height: 100px;
+  width: 171px;
+}
+.userPopout-xaxa6l .headerTop-3vNv-a .profileBadges-ohc0Vu {
+  right: var(--primary-spacing);
+  top: unset;
+  bottom: 0;
+}
+.userPopout-xaxa6l .headerTop-3vNv-a .headerText-1vVs-U {
+  padding-left: var(--primary-spacing);
+}
+.userPopout-xaxa6l .body-3HBlXn {
+  background-color: var(--background-secondary);
+  border-radius: var(--primary-rounding);
+  margin: var(--primary-spacing);
+  max-height: 400px;
+  padding: 10px;
+}
+.userPopout-xaxa6l .body-3HBlXn .bodyInnerWrapper-26fQXj {
+  background-color: var(--background-tertiary);
+  border-radius: var(--primary-rounding);
+  padding: 6px;
+}
+.userPopout-xaxa6l .footer-3UKYOU {
+  background-color: var(--background-secondary);
+  border-radius: var(--primary-rounding);
+  margin: var(--primary-spacing);
+  margin-top: 0 !important;
+  padding: 16px;
+}
+
+/* extended user panel (looks amazing btw) by ADudeCalledLeo */
+/* the main bit! */
+.container-3baos1 {
+  position: fixed;
+  left: 4px;
+  top: calc(100% - 52px);
+  width: 292px;
+  background-color: var(--background-tertiary);
+}
+
+/* PATCH for scrollers above the user panel to make space */
+.guilds-1SWlCJ, /* servers */
+.sidebar-2K8pFh /* channels */ {
+  height: calc(100% - 52px);
+}
+
+/* stops community server icons from shrinking on the emoji popouts by Davri */
+.guildSection-1EoFKd > .flex-1xMQg5 > svg {
+  flex-shrink: 0;
+}
+
+/* fix the friends list colours by c69 */
+.peopleList-3c4jOR.auto-Ge5KZx.scrollerBase-289Jih {
+  color: var(--dracula-background);
+  background-color: var(--dracula-background);
+}
+
+/* fix the community section piece of by c69 */
+.scroller-1d5FgU .auto-Ge5KZx .scrollerBase-289Jih {
+  color: var(--dracula-background);
+  background-color: var(--dracula-background);
+}
+
+.div-root-1gCeng.small-3iVZYw.fullScreenOnMobile-1bD22y {
+  color: var(--dracula-background);
+  background-color: var(--dracula-background);
+}
+
+.footerButton-ayFTfX .button-38aScr {
+  color: var(--dracula-purple);
+}
+/* Thanks to everyone who contributed their CSS Snipets and Themes for this theme, ik i'll never be able to credit you without being cringe but hey! Atleast this footnote serves of something.... right? */
+
+/* Reminder for stuff: https://cdn.discordapp.com/attachments/278340416628326400/844623014088015912/video0.mp4 */
+ 
