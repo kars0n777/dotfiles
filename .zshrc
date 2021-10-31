@@ -1,9 +1,8 @@
-#  _____ _____ _____ 
-# |___  |___  |___  |   karson777's zshrc file
-#    / /   / /   / /    Based off of distrotube's zshrc. 
-#   / /   / /   / /     Made for arch-based distrobutions
-#  /_/   /_/   /_/      Dependencies: pokemon-colorscripts, 
-#                       zsh-syntax-highlinting and others 
+#  _____ _____ _____    karson777's zshrc file 
+# |___  |___  |___  |   Based off of distrotube's zshrc. 
+#    / /   / /   / /    Made for arch-based distrobutions
+#   / /   / /   / /     Dependencies: pokemon-colorscripts, 
+#  /_/   /_/   /_/      zsh-syntax-highlinting and others 
 #                       are found in the alias's section.
 
 # Lines configured by zsh-newuser-install
@@ -145,12 +144,12 @@ alias doas="doas --"
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
-#alias cat='bat --theme=Dracula' 
+alias cat='bat --theme=Dracula' 
 
 # confirm before overwriting something
-#alias cp="cp -i"
-#alias mv='mv -i'
-#alias rm='rm -i'
+alias cp="cp -i"
+alias mv='mv -i'
+alias rm='rm -i'
 
 #ls
 alias ls='exa --group-directories-first --icons -a'
@@ -177,7 +176,7 @@ alias yta-wav="youtube-dl -i --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -i -f bestvideo+bestaudio "
 
 # Default Manjaro Alias's
-alias cp="cp -i"                          # confirm before overwriting something
+#alias cp="cp -i"                          # confirm before overwriting something
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
@@ -187,7 +186,7 @@ alias more=less
 alias sp='sudo pacman'
 alias p='pacman'
 alias a='paru'
-alias y='yay'
+#alias y='yay'
 
 # Power
 alias shu='sudo openrc-shutdown -p now' 
@@ -208,7 +207,7 @@ alias h='history 0'
 alias hs='history 0 | grep '
 alias b='bpytop'
 alias e='exit'
-alias show='mpv --no-resume-playback --shuffle ~/Videos/show-movie-autoplay'
+alias show='mpv --no-resume-playback --shuffle ~/videos/show-movie-autoplay'
 alias sudoe='sudo -e' 
 alias c='cmus'
 alias z='zathura'
