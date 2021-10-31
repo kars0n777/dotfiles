@@ -1,9 +1,10 @@
 #  _____ _____ _____ 
 # |___  |___  |___  |   karson777's zshrc file
-#    / /   / /   / /    Only dependency is zsh-syntax-highlighting    
-#   / /   / /   / /     This rc file is mean't for arch-based dis-
-#  /_/   /_/   /_/      robutions.  
-#
+#    / /   / /   / /    Based off of distrotube's zshrc. 
+#   / /   / /   / /     Made for arch-based distrobutions
+#  /_/   /_/   /_/      Dependencies: pokemon-colorscripts, 
+#                       zsh-syntax-highlinting and others 
+#                       are found in the alias's section.
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.zhistory
@@ -19,7 +20,7 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 ### "nvim" as manpager
-#export MANPAGER="nvim -c 'set ft=man' -"
+#export MANPAGER="vim -c 'set ft=man' -"
 
 ### SET VI MODE ###
 # Comment this line out to enable default emacs-like bindings
@@ -174,9 +175,6 @@ alias yta-opus="youtube-dl -i --extract-audio --audio-quality 0 --audio-format o
 alias yta-vorbis="youtube-dl -i --extract-audio --audio-format vorbis "
 alias yta-wav="youtube-dl -i --extract-audio --audio-format wav "
 alias ytv-best="youtube-dl -i -f bestvideo+bestaudio "
-alias lr="~/./.likes-refresh.sh"
-# the terminal rickroll
-alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
 
 # Default Manjaro Alias's
 alias cp="cp -i"                          # confirm before overwriting something
@@ -192,10 +190,15 @@ alias a='paru'
 alias y='yay'
 
 # Power
-alias bye='shutdown now' 
-alias reb='reboot'
-alias hyb='systemctl hibernate'
-alias hz='~/.75hz.sh'
+alias shu='sudo openrc-shutdown -p now' 
+alias reb='sudo reboot'
+# alias hyb='systemctl hibernate'
+
+# Scripts
+alias mac='~/scripts/ip-mac-change.sh'
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+alias lr="~/./.likes-refresh.sh"
+alias hz='~/scripts/75hz.sh'
 
 # Shortened Programs
 alias vim='nvim'
@@ -210,8 +213,8 @@ alias sudoe='sudo -e'
 alias c='cmus'
 alias z='zathura'
 alias pcs='pokemon-colorscripts -r'
-#alias lf='lfrun'
-alias sxiv='sxiv -a' 
+alias lf='lfcd'
+alias sxiv='sxiv -r -a' 
 alias ani-cli='~/1tb-hdd/github/ani-cli/ani-cli'
 alias ani='~/1tb-hdd/github/ani-cli/ani-cli'
 
@@ -224,7 +227,6 @@ alias pic='cd ~/pictures/'
 alias vid='cd ~/videos/'
 alias con='cd ~/.config/'
 alias 1='cd ~/1tb-hdd/'
-alias sxiv='sxiv -a' 
 alias pv='sudo protonvpn '
 #alias moc='mocp'
 
