@@ -1,30 +1,33 @@
 ## System
 picom -b --focus-exclude "x = 0 && y = 0 && override_redirect = true" &
-#lxsession &
+lxqt-policykit-agent &
 
 ## Appearence
-#feh --bg-fill ~/pictures/wallpapers/serial-experiments-lain-room-1514392856.jpg &
 nitrogen --restore &
-export QT_QPA_PLATFORMTHEME=qt5ct 
-unset QT_STYLE_OVERRIDE
+
+## qt5ct as qt theme
+#export QT_QPA_PLATFORMTHEME=qt5ct
+#unset QT_STYLE_OVERRIDE
+
+## kvantum as qt theme
+export QT_STYLE_OVERRIDE=kvantum
 
 ## Panel
 slstatus &
-#blueman-applet & 
 volumeicon &
-#lxqt-connman-applet &
+connman-gtk --tray &
+dunst &
 
 ## Keyboard
 xmodmap ~/.Xmodmap &
 sxhkd &
 
 ## Applications
-discord &
+noisetorch &
 element-desktop &
 keepassxc &
-moc &
 alacritty -e mocp &
-noisetorch &
+#mullvad-vpn &
 
 ## WM
 exec dwm

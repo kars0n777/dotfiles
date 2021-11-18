@@ -1,12 +1,9 @@
-set ratios 1:2:3
-set cleaner ~/.config/lf/cleaner
-set previewer ~/.config/lf/preview
 # Basic Settings
-set preview false 
-set hidden true 
+set preview true 
+#set hidden true 
 set icons true 
 set ignorecase true
-set drawbox true
+#set drawbox true
 # Custom Functions
 cmd open ${{
     case $(file --mime-type "$f" -bL) in
@@ -69,9 +66,6 @@ cmd broot_jump ${{
   lf -remote "send $id $cmd \"$res\""
 }}
 
-cmd open_config  ${{
-  $EDITOR $(bookmenu -b ~/.config/bookmenu/configs -f fzf -o)
-}}
 
 cmd dragon %dragon-drag-and-drop -a -x $fx
 cmd dragon-stay %dragon-drag-and-drop -a $fx
@@ -122,7 +116,7 @@ cmd restore_trash ${{
   trash-restore
 }}
 
-cmd stripspace %stripspace "$f"
+#cmd stripspace %stripspace "$f"
 
 # Bindings
 # Remove some defaults
@@ -147,9 +141,9 @@ map u $view "$f"
 # Archive Mappings
 map az zip
 map at tar
-map ag targz
-map ab targz
+map ag targz map ab targz
 map au unarchive
+map aU unzip
 
 # Trash Mappings
 map dd trash
@@ -172,7 +166,6 @@ map md mkdir
 map ms $mkscript
 map ch chmod
 map bg setwallpaper
-map o open_config
 map br $vimv $fx
 map r rename
 map H top
@@ -182,29 +175,33 @@ map C clear
 map U unselect
 
 # Movement
-map g1 cd ~/1.6TB\ HDD/ 
-map gv cd ~/Videos
-map gt cd ~/Torrent
+map g1 cd ~/1tb-hdd
+map gv cd ~/videos
+map gt cd ~/1tb-hdd/torrent
 map gT cd ~/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/Downloads/
-map gp cd ~/Pictures
-map gC cd ~/Pictures/screenshots
-map gw cd ~/Pictures/wallpapers
-map gD cd ~/Documents
-map gd cd ~/Downloads
+map gp cd ~/pictures
+map gC cd ~/pictures/screenshots
+map gw cd ~/pictures/wallpapers
+map gD cd ~/documents
+map gd cd ~/downloads
 map ga cd ~/audio
 map gm cd ~/audio/music
-map gM cd ~/Videos/movies/
-map gs cd ~/Videos/shows/
+map gM cd ~/videos/movies/
+map gs cd ~/videos/shows/
 map gS cd ~/scripts
-map gi cd ~/1.6TB\ HDD/iso\ files/
+map gi cd ~/1tb-hdd/iso-files/
 map gc cd ~/.config
 map gl cd ~/.local
+map gH cd ~/videos/shows/hunter-x-hunter/\[Judas\]\ Hunter\ x\ Hunter\ \(2011\)\ -\ Episodes\ 001-148/
+map gu cd ~/suckless
+map go cd ~/videos/obs
+map gO cd ~/dotfiles
 
 map g/ cd /
 map gr cd /run/media
 map gE cd /etc
 map gU cd /usr
-map gu cd /usr/share
+map gU cd /usr/share
 map ge cd /etc/
 
 map \;j cd ~
