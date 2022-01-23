@@ -1,4 +1,4 @@
-#  _____ _____ _____ 
+#  _____ _____ _____
 # |___  |___  |___  | This is karson777's sxkdrc
 #    / /   / /   / /  just some music and application
 #   / /   / /   / /   specific keybinds. Enjoy <3 
@@ -12,52 +12,13 @@
 # but if you use a different terminal all you need to
 # do is replace "alacritty" with the terminal of your choice
 
-### ARandR
-super + shift + a
-    arandr
-
-### Brave Browser
-#super +v 
-#    brave
-
-super + shift + v
-    brave --incognito
-
-### Librewolf Browser
-super + b
-    librewolf 
-
-super + shift + b
-    librewolf -P big-tech
-
-super + v 
-    librewolf -P school
-
-super + alt + b
-    librewolf --profilemanager
-
-### Bpytop System Monitor
-ctrl + shift + Escape 
-    alacritty -e bpytop
-
-### Calculator (KCalc)
-super + shift + c
-    kcalc
-
-### Cava Music Visualizer
-super + alt + a
-    alacritty -e cava 
-
 ### Chatterino
-super + shift + h
+super + grave
     chatterino
 
-### CMUS Music Player
-#alt + shift + c
-#    alacritty -e cmus
-
-#alt + shift + {space, d, a, w, s, e, q, r, f}
-#    cmus-remote {-u,-n,-r,-v +5%,-v -5%,-k +10,-k -10,-R,-S}
+### Ungoogled chromium
+super + shift + c
+    chromium
 
 ### Dmenu
 #super + shift + Return
@@ -68,28 +29,27 @@ super + alt + d
     discord
 
 ### Dolphin File Manager
-super + 6
+super + y 
     dolphin
 
 ### Element Desktop Matrix Client
-super + alt + m
-    /usr/bin/element-desktop
+super + alt + r
+    /usr/bin/element-desktop-nightly
+
+super + i
+    /usr/bin/element-desktop-nightly
 
 ### Emoji Selector
 super + alt + e
-    emote
+    ~/scripts/dmenu-emoji.sh
 
 ### Gimp
 super + g
     gimp
 
-### Glava Audio Visualizer
-super + alt + g
-    glava
-
 ### i3lock (lock screen)
-super + Escape 
-    i3lock -f -t -i ~/1tb-hdd/downloads/88.png
+Home
+    i3lock -f -t -i ~/downloads/arch-background.png
 
 ### Kdenlive Video Editor
 super + k
@@ -99,28 +59,22 @@ super + k
 super + comma 
     keepassxc
 
-### Rofi
-super + shift + Return 
-    rofi -show drun 
-
-### Alacrity Terminal 
-#super + Return 
-   #alacritty 
-
 ### LF File Manager
-super + f
-    alacritty -e lf
-
-### LibreOffice Writer
-super + ~ 
-    libreoffice --writer
+super + n
+   alacritty -e lf
 
 ### Librewolf Browser
 super + b
-    librewolf 
+    librewolf -P main-privacy  
 
 super + shift + b
-    librewolf --private
+    librewolf -P main-privacy --private-window
+
+super + v 
+    librewolf -P big-tech
+
+super + shift + v 
+    librewolf -P school
 
 ### Lutris
 super + l
@@ -128,14 +82,23 @@ super + l
 
 ### Tutanota 
 super + m
-    librewolf https://mail.tutanota.com/ 
+    librewolf --new-window https://mail.tutanota.com/ 
 
 ### MOC Music Player
 alt + shift + c
-    alacritty -e mocp
+   alacritty -e mocp
 
-alt + shift + {space, d, a, w, s, e, q, r, f}
-    mocp + {-G,-f,-r,-v +5,-v -5,-k +10s,-k -10s,-t r,-t shuffle}
+alt + shift + {space, w, s, e, q, r, f}
+    mocp + {-G,-v +5,-v -5,-k +10s,-k -10s,-t r,-t shuffle}
+
+alt shift + d
+    mocp -f && sleep 0.1 && notify-send "$(mocp -i | sed "s/File: \/home\/karson777\/audio\/music\/full-library\///g" | sed "s/.opus//g" | sed "s/.mp3//g" | head -2 | tail +2)"
+
+super + F5
+    mocp -f && sleep 0.1 && notify-send "$(mocp -i | sed "s/File: \/home\/karson777\/audio\/music\/full-library\///g" | sed "s/.opus//g" | sed "s/.mp3//g" | head -2 | tail +2)"
+
+alt + shift + a
+    mocp -r && sleep 0.1 && notify-send "$(mocp -i | sed "s/File: \/home\/karson777\/audio\/music\/full-library\///g" | sed "s/.opus//g" | sed "s/.mp3//g" | head -2 | tail +2)"
 
 ### Mullvad vpn
 super + shift + g
@@ -143,136 +106,120 @@ super + shift + g
 
 ### OBS
 super + o 
-    obs
-
-### Octopi
-super + p
-    /usr/bin/octopi
-
-### VirtualBox
-super + 8
-    VirtualBox %U
+    /var/lib/flatpak/app/com.obsproject.Studio/current/active/export/bin/com.obsproject.Studio
 
 ### Picom Toggle
 alt + space
     ~/scripts/picom-toggle.sh
 
-### PokeMMO
-super + i
-    pokemmo-launcher
-
 ### Pulsemixer 
-super + alt + v
-    alacritty -e pulsemixer 
+super + shift + m 
+   alacritty -e pulsemixer 
 
 ### qBittorrent
 super + alt + q
     qbittorrent
 
-### Screenkey
-super + shift + F2
-    screenkey
+#### QuteBrowser
+super + shift + n
+    qutebrowser
 
-super + shift + F3
-    pkill screenkey
+### Maim (screenshot) 
+Print
+    maim -s ~/pictures/screenshots/$(date +%s).png 
 
-### Scrcpy Android Viewer
-super + grave 
-    scrcpy
+super + p
+
+    maim -s ~/pictures/screenshots/$(date +%s).png 
+
+Insert
+    maim ~/pictures/screenshots/$(date +%s).png 
+
+super + shift + p
+    maim ~/pictures/screenshots/$(date +%s).png 
 
 ### Steam
-super + alt + s
+super + j
     /us/bin/steam-runtime %U
 
 ### Tor Browser
 super + h
     torbrowser-launcher %u
 
-
-
-##### WEBSITES #####
-
-# Librewolf is hardcoded into my website shortcuts,
-# so if you want to use a different browser  
-# change "librewolf" with the browser of your 
-# choice
-
-### Live Stream Fail (reddit)
-super + shift + l
-    librewolf https://old.reddit.com/r/LivestreamFail/
-
-### Merriam Webster Dictionary
-super + ctrl + d 
-    librewolf https://www.merriam-webster.com/
-
 ### Odysee  
 super + F5
     librewolf odysee.com
 
 ### Odysee Dashboard
-super + shift + o
-    librewolf https://odysee.com/$/dashboard
+super + shift + F5 
+    librewolf -P main-privacy "https://odysee.com/$/dashboard"
 
 ### Soundcloud
-super + shift + ctrl + s 
-    librewolf https://soundcloud.com/you/library
+super + alt + s 
+    librewolf "https://soundcloud.com/you/library" -p big-tech 
 
 ### Twitch
 super + F3 
-    librewolf https://www.twitch.tv/directory/all
+    librewolf -P bigtech "https://www.twitch.tv/directory/all"
 
 ### Twitch Dashboard
-super + shift + m
-    librewolf https://dashboard.twitch.tv/u/kars0n777/stream-manager
+super + shift + F3 
+    librewolf -P bigtech "https://dashboard.twitch.tv/u/kars0n777/stream-manager"
 
 ### YouTube
 super + F4
-    librewolf youtube.com
+    librewolf -p big-tech "https://youtube.com"
 
 ### YouTube Studio
-super + shift + k
-    librewolf https://studio.youtube.com/channel/UCCcFSRgQRxLV_QC1kELwcpQ
+super + shift + F4 
+    librewolf -p big-tech "https://studio.youtube.com/channel/UCCcFSRgQRxLV_QC1kELwcpQ"
 
+### Playerctl
+XF86AudioPlay
+    playerctl play-pause
 
+XF86AudioStop
+    playerctlalacrittyop
 
-##### FILES #####
+XF86AudioPrev
+    playerctl previous
 
-### zshrc 
-super + alt + z
-    alacritty -e nvim ~/.zshrc
-
-### mpv.conf
-super + shift + p
-    alacritty -e nvim ~/.config/mpv/mpv.conf
-
-super + alt + p 
-    alacritty -e nvim ~/.config/mpv/input.conf
-
-### sxhkdrc (this file)
-super + alt + x
-    alacritty -e nvim ~/.config/sxhkd/sxhkdrc
-
-### daily board
-super + alt + t
-    alacritty -e nvim ~/documents/board.md
-
-
-
-##### SYSTEM #####
+XF86AudioNext
+    playerctl next
 
 ### Hybernate System
 super + ctrl + alt + shift + F12
-    systemctl hibernate
+    i3lock -f -t -i ~/downloads/arch-background.png; systemctl hibernate
 
 ### wmctrl fullscreen
-Home
-    wmctrl -r ':ACTIVE:' -b toggle,fullscreen
-alt + f
+super + f
     wmctrl -r ':ACTIVE:' -b toggle,fullscreen
 
-### Android Tablet as Monitor
-#super + shift + space
-#    /home/karson777/scripts/android-monitor-start.sh
+### Volume 
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
 
-#super + alt + space
-#    /home/karson777/scripts/android-monitor-stop.sh
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -t "500" "toggle mute" 
+
+super + button4
+    pactl set-sink-volume @DEFAULT_SINK@ +2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+super + button5 
+    pactl set-sink-volume @DEFAULT_SINK@ -2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+### vim keys everywhere
+super + alt + h 
+    xdotool --window $(xdotool getactivewindow) keyup Left
+
+super + alt + j 
+    xdotool --window $(xdotool getactivewindow) keyup Down
+
+super + alt + k
+    xdotool --window $(xdotool getactivewindow) keyup Up
+
+super + alt + l 
+    xdotool --window $(xdotool getactivewindow) keyup Right

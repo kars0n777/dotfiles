@@ -52,7 +52,7 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=38
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Colors and Theming
+" => Colors and Themeing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 highlight Normal           guifg=#dfdfdf ctermfg=15   guibg=#282c34 ctermbg=none  cterm=none
 highlight LineNr           guifg=#5b6268 ctermfg=8    guibg=#282c34 ctermbg=none  cterm=none

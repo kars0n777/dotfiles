@@ -1,3 +1,6 @@
+set ratios 1:2:3
+set cleaner ~/.config/lf/cleaner
+set previewer ~/.config/lf/preview
 # Basic Settings
 set preview true 
 #set hidden true 
@@ -122,7 +125,6 @@ cmd restore_trash ${{
 # Remove some defaults
 map m
 map o
-map n
 map "'"
 map '"'
 map d
@@ -153,6 +155,14 @@ map tr restore_trash
 # Broot Mapping
 map f broot_jump
 
+# Dragon Mapping
+map dr dragon
+map ds dragon-stay
+map di dragon-individual
+map dm mvdragon
+map dc cpdragon
+map dl dlfile
+
 # Basic Functions
 map <backspace2> set hidden!
 map DD delete
@@ -175,9 +185,8 @@ map C clear
 map U unselect
 
 # Movement
-map g1 cd ~/1tb-hdd
 map gv cd ~/videos
-map gt cd ~/1tb-hdd/torrent
+map gt cd ~/torrent
 map gT cd ~/.local/share/torbrowser/tbb/x86_64/tor-browser_en-US/Browser/Downloads/
 map gp cd ~/pictures
 map gC cd ~/pictures/screenshots
@@ -186,20 +195,28 @@ map gD cd ~/documents
 map gd cd ~/downloads
 map ga cd ~/audio
 map gm cd ~/audio/music
+map gb cd ~/books
 map gM cd ~/videos/movies/
+map gn cd ~/nextcloud/
 map gs cd ~/videos/shows/
 map gS cd ~/scripts
-map gi cd ~/1tb-hdd/iso-files/
+map gi cd ~/videos/iphone/
+map gI cd ~/iso-files/
 map gc cd ~/.config
 map gl cd ~/.local
-map gH cd ~/videos/shows/hunter-x-hunter/\[Judas\]\ Hunter\ x\ Hunter\ \(2011\)\ -\ Episodes\ 001-148/
-map gu cd ~/suckless
+map gH cd ~/videos/shows/cowboy-bepop
+map gu cd ~/git/karson777/suckless
 map go cd ~/videos/obs
-map gO cd ~/dotfiles
+map gO cd ~/git/karson777/dotfiles
+map gy cd ~/videos/youtube/
+map gG cd ~/git/
+map gP cd ~/gimp
+map gk cd ~/kdenlive
+map gE cd ~/emulation
 
 map g/ cd /
-map gr cd /run/media
-map gE cd /etc
+map gr cd /run/media/karson777
+map gN cd /mnt/
 map gU cd /usr
 map gU cd /usr/share
 map ge cd /etc/

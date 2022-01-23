@@ -117,61 +117,72 @@ alias fgrep='fgrep --color=auto'
 
 # confirm before overwriting something
 alias cp="cp -i"
+alias cr='cp -r'
 alias mv='mv -i'
 alias rm='rm -i'
+alias rf='rm -rf'
 
 #ls
-alias ls='exa --group-directories-first --icons -a'
-alias ll='exa --group-directories-first --icons -la'
-alias lg='exa --group-directories-first --icons | grep'
+alias ls='exa --group-directories-first --icons'
+alias lsa='exa --group-directories-first --icons -a'
+alias l='exa --group-directories-first --icons -l'
+alias la='exa --group-directories-first --icons -la'
+alias lg='exa --group-directories-first --icons -l | grep --color=auto'
 
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-alias vifm='./.config/vifm/scripts/vifmrun'
+#alias vifm='./.config/vifm/scripts/vifmrun'
 
-# youtube-dl
-alias yta='youtube-dl -i '
-alias yta-aac="youtube-dl -i --extract-audio --audio-format aac "
-alias yta-best="youtube-dl -i --extract-audio --audio-format best "
-alias yta-flac="youtube-dl -i --extract-audio --audio-format flac "
-alias yta-m4a="youtube-dl -i --extract-audio --audio-format m4a "
-alias yta-mp3="youtube-dl -i --extract-audio --audio-format mp3 "
-alias yta-opus="youtube-dl -i --extract-audio --audio-quality 0 --audio-format opus "
-alias yta-vorbis="youtube-dl -i --extract-audio --audio-format vorbis "
-alias yta-wav="youtube-dl -i --extract-audio --audio-format wav "
-alias ytv-best="youtube-dl -i -f bestvideo+bestaudio "
+# yt-dlp
+alias yta='yt-dlp -i '
+alias yta-flac="yt-dlp -i --extract-audio --audio-format flac "
+alias yta-opus="yt-dlp -i --extract-audio --audio-quality 0 --audio-format opus "
+alias ytv-best="yt-dlp -i -f bestvideo+bestaudio "
 
 # Package Managers 
 alias sp='sudo pacman'
 alias p='pacman'
 alias a='paru'
-
-# Power
-alias shu='sudo openrc-shutdown -p now' 
-alias reb='sudo reboot'
-
-# Scripts
-alias mac='~/scripts/ip-mac-change.sh'
-alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
-alias lr="~/./.likes-refresh.sh"
-alias hz='~/scripts/75hz.sh'
+alias sf='sudo flatpak'
+alias fl='flatpak'
+alias spn='sudo pacman --noconfirm'
+alias an='paru --noconfirm'
 
 # Shortened Programs
 alias v='nvim'
-alias h='history'
-alias hs='history | grep '
-alias b='bpytop'
+alias vim='nvim'
+alias h='history 0'
+alias hs='history 0 | grep '
+alias se='sudoedit'
+alias su='sudo su'
 alias e='exit'
-alias sudoe='sudo -e' 
-alias z='zathura'
-alias pcs='pokemon-colorscripts -r'
-alias lf='lf'
+alias za='zathura'
+alias pc='pokemon-colorscripts -r'
+alias lf='lfcd'
 alias sxiv='nsxiv -r -a' 
-alias ani-cli='~/1tb-hdd/github/ani-cli/ani-cli'
-alias ani='~/1tb-hdd/github/ani-cli/ani-cli'
+alias s='nsxiv -r -a' 
+alias n='neofetch'
+alias m='mpv'
+alias pm='pulsemixer'
+alias h='htop'
+alias sma='sudo make install'
+alias lb='librewolf -p main-privacy'  
+alias mac='sudo macchanger enp4s0 --random'
+
+# Git
+alias ga='git add .'
+alias gco='git commit -m'                                   # make sure you add a commit message in " " 
+alias gp='git push'
+alias p2g='git add . && git commit -m "lol" && git push'    # push to git
+
+# Shell
+alias b='bash'
+alias f='fish'
+alias z='zsh'
 
 # Directorys
+alias c='cd'
 alias dow='cd ~/downloads/'
 alias doc='cd ~/documents/'
 alias aud='cd ~/audio/'
@@ -179,8 +190,11 @@ alias mus='cd ~/audio/music/'
 alias pic='cd ~/pictures/'
 alias vid='cd ~/videos/'
 alias con='cd ~/.config/'
-alias 1='cd ~/1tb-hdd/'
 
+# Power
+alias po='poweroff'
+alias re='reboot'
+alias hi='systemctl hibernate'
 
 
 ### NEW SHELL SCRIPT ###
