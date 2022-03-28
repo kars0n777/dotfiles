@@ -1,10 +1,5 @@
-# My Dotfiles
-### These aren't for wide use, but just something take and modify.
+# karson777's dotfiles
 
-- These are my dotfiles, I can promise you most of them are taken from someone elses github repo and edited to some extent
+I can't take credit for all my dots, most of them are from brodie robertson or distrotube
 
-- My vim bashrc zshrc and other configs are based off of [distrotube's gitlab](https://gitlab.com/dwt1)
-- My lf and some other configs are based off of [brodie robertson's github](https://github.com/BrodieRobertson)
-
-If there are any issues with my dotfiles or something you think I could add let me know!
--k7
+**There is a README.md on all configs that need explanation or more setup by the user**

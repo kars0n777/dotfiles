@@ -1,8 +1,0 @@
-Threshold = 5
-DisplayMonitorSources = false
-EnableUpdates = true
-GuiltTripped = false
-FilterInput = true
-FilterOutput = false
-LastUsedInput = "alsa_input.usb-FuZhou_Kingwayinfo_CO._LTD_TONOR_TC30_Audio_Device_20200707-00.mono-fallback"
-LastUsedOutput = ""
