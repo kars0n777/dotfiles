@@ -1,0 +1,314 @@
+#  _____ _____ _____
+# |___  |___  |___  | This is karson777's sxkdrc
+#    / /   / /   / /  just some music and application
+#   / /   / /   / /   specific keybinds. Enjoy <3 
+#  /_/   /_/   /_/   
+
+
+
+##### PROGRAMS #####
+
+# Alacritty is hardcoded into launching terminal programs,
+# but if you use a different terminal all you need to
+# do is replace "alacritty" with the terminal of your choice
+
+### Chatterino
+super + grave
+    mullvad-exclude chatterino
+
+### Conky
+super + bracketleft
+	~/scripts/conky/conky-left.sh
+
+super + bracketright
+	~/scripts/conky/conky-right.sh
+
+super + shift + bracketleft
+	pkill conky
+
+super + shift + bracketright
+	conky
+
+### Ungoogled chromium
+super + shift + c
+    chromium
+
+### Dmenu
+#super + shift + Return
+#    dmenu_run 
+
+### Discord
+#super + alt + d
+#    discord
+
+### Dolphin File Manager
+#super + y 
+#    dolphin
+
+### Element Desktop Matrix Client
+#super + alt + r
+#element-desktop
+#
+#super + i
+#    element-desktop
+
+### Emoji Selector
+#super + alt + t
+#    ~/scripts/dmenu-emoji.sh
+
+#when you don't have dmenu emojis working lol
+super + alt + t
+	alacritty -e nvim ~/scripts/emoji.txt
+
+### Ffmpeg recording
+# desktop and mic (no desktop audio)
+super + o 
+	ffmpeg -framerate 60 -f x11grab -s 1920x1080 -i :0.0 -f alsa -i default ~/videos/ffmpeg/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').mkv
+
+# just desktop (no audio) 
+super + shift + o
+	ffmpeg -framerate 60 -f x11grab -s 1920x1080 -i :0.0 ~/videos/ffmpeg/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').mkv
+
+#stop recording
+super + ctrl + o
+	killall ffmpeg
+
+### Feh Wallpaper
+super + semicolon 
+	feh --bg-fill ~/pictures/wallpapers/dvorak/wallhaven-v9jm3.jpg
+	
+super + apostrophe  
+	feh --bg-fill ~/pictures/wallpapers/dvorak/$("ls" ~/pictures/wallpapers/dvorak | shuf --head-count=1)
+
+### Gimp
+super + g
+    gimp
+
+### i3lock (lock screen)
+Home
+    pactl set-sink-mute @DEFAULT_SINK@ true && notify-send -t "2000" "bye bye :(" && sleep 1s && i3lock -f -t -i ~/pictures/wallpapers/dvorak/wallhaven-72ozj3.png -n && pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -t "2000" "welcome back < 3" 
+
+shift + Home
+    i3lock  -f -t -i ~/pictures/wallpapers/dvorak/wallhaven-72ozj3.png 
+
+### Kdenlive Video Editor
+super + k
+    kdenlive
+
+### KeepassXC Password Manager
+super + comma 
+    keepassxc
+
+### LF File Manager
+super + n
+   alacritty -e lf
+
+### Librewolf Browser
+super + b
+    librewolf -P main-privacy  
+
+super + shift + b
+    librewolf -P main-privacy --private-window
+
+super + v 
+    librewolf -P big-tech
+
+super + shift + v 
+    librewolf -P school
+
+### Lutris
+super + l
+    lutris
+
+### Tutanota 
+super + m
+    librewolf --new-window https://mail.tutanota.com/ 
+
+### Ncmcpp (mpd)
+alt + shift + n
+	alacritty -e ncmpcpp
+
+alt + shift + space 
+	mpc toggle
+
+alt + shift + s
+	mpc next && notify-send "$(mpc current)"
+
+alt + shift + a
+	mpc prev && notify-send "$(mpc current)"
+
+super + F5
+	mpc next && notify-send "$(mpc current)"
+
+alt + shift + w
+	mpc volume +5
+
+alt + shift + r
+	mpc volume -5
+
+alt + shift + q
+	mpc seek -5
+
+alt + shift + f
+	mcp seek +5
+
+alt + shift + t
+	mpc random
+
+alt + shift + p
+	mpc repeat
+
+### MOC Music Player
+#alt + shift + c
+#   alacritty -e mocp
+#
+#alt + shift + {space, w, s, e, q, r, f}
+#    mocp + {-G,-v +5,-v -5,-k +10s,-k -10s,-t r,-t shuffle}
+#
+#alt shift + d
+#    mocp -f && sleep 0.1 && notify-send "$(mocp -i | sed "s/File: \/home\/karson777\/audio\/music\/full-library\///g" | sed "s/.opus//g" | sed "s/.mp3//g" | head -2 | tail +2)"
+#
+#super + F5
+#    mocp -f && sleep 0.1 && notify-send "$(mocp -i | sed "s/File: \/home\/karson777\/audio\/music\/full-library\///g" | sed "s/.opus//g" | sed "s/.mp3//g" | head -2 | tail +2)"
+#
+#alt + shift + a
+#    mocp -r && sleep 0.1 && notify-send "$(mocp -i | sed "s/File: \/home\/karson777\/audio\/music\/full-library\///g" | sed "s/.opus//g" | sed "s/.mp3//g" | head -2 | tail +2)"
+#
+### Mullvad vpn
+super + shift + g
+    mullvad-vpn
+
+### OBS
+#super + o
+#	obs-studio
+
+### Picom Toggle
+alt + space
+    ~/scripts/picom-toggle.sh
+
+### Pulsemixer 
+super + shift + m 
+   alacritty -e pulsemixer 
+
+### Qtfm
+super + y
+	qtfm
+
+#### QuteBrowser
+super + shift + n
+    qutebrowser
+
+### Sxhkd
+super + shift + semicolon
+	pkill sxhkd
+
+### Maim (screenshot) 
+Print
+    maim -s ~/pictures/screen/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').png | echo ~/pictures/screen/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').png | xclip -selection clipboard
+
+super + p
+    maim -s ~/pictures/screen/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').png | echo ~/pictures/screen/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').png | xclip -selection clipboard
+
+Insert
+    maim ~/pictures/screen/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').png | echo ~/pictures/screen/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').png | xclip -selection clipboard 
+
+super + shift + p
+    maim ~/pictures/screen/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').png | echo ~/pictures/screen/$(date --rfc-3339=seconds | sed -e 's/\ /-/g' | sed -e 's/\:/-/g').png | xclip -selection clipboard 
+
+### Steam
+super + j
+    /us/bin/steam-runtime %U
+
+### Tor Browser
+super + h
+    torbrowser-launcher %u
+
+### Odysee  
+super + F5
+    librewolf odysee.com
+
+### Odysee Dashboard
+super + shift + F5 
+    librewolf -P main-privacy "https://odysee.com/$/dashboard"
+
+### Soundcloud
+super + alt + s 
+    librewolf "https://soundcloud.com/you/library" -p big-tech 
+
+### Twitch
+super + F3 
+    librewolf -P bigtech "https://www.twitch.tv/directory/all"
+
+### Twitch Dashboard
+super + shift + F3 
+    librewolf -P bigtech "https://dashboard.twitch.tv/u/kars0n777/stream-manager"
+
+### YouTube
+super + F4
+    librewolf -p big-tech "https://youtube.com"
+
+### YouTube Studio
+super + shift + F4 
+    librewolf -p big-tech "https://studio.youtube.com/channel/UCCcFSRgQRxLV_QC1kELwcpQ"
+
+### Playerctl
+XF86AudioPlay
+    playerctl play-pause
+
+XF86AudioStop
+    playerctlalacrittyop
+
+XF86AudioPrev
+    playerctl previous
+
+XF86AudioNext
+    playerctl next
+
+### Suspend System
+super + ctrl + alt + shift + F12
+	i3lock  -f -t -i ~/pictures/wallpapers/dvorak/wallhaven-72ozj3.png && loginctl suspend 
+
+### wmctrl fullscreen
+super + f
+    wmctrl -r ':ACTIVE:' -b toggle,fullscreen
+
+### Volume 
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -t "500" "toggle mute" 
+
+super + button4
+    pactl set-sink-volume @DEFAULT_SINK@ +2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+super + button5 
+    pactl set-sink-volume @DEFAULT_SINK@ -2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+super + button2
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -t "500" "toggle mute" 
+
+super + alt + c
+    pactl set-sink-volume @DEFAULT_SINK@ +2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+super + alt + x
+    pactl set-sink-volume @DEFAULT_SINK@ -2% && notify-send -t "200" "volume $(pamixer --get-volume)%"
+
+super + alt + v
+    pactl set-sink-mute @DEFAULT_SINK@ toggle && notify-send -t "500" "toggle mute" 
+
+### vim keys everywhere
+super + alt + h 
+    xdotool --window $(xdotool getactivewindow) keyup Left
+
+super + alt + j 
+    xdotool --window $(xdotool getactivewindow) keyup Down
+
+super + alt + k
+    xdotool --window $(xdotool getactivewindow) keyup Up
+
+super + alt + l 
+    xdotool --window $(xdotool getactivewindow) keyup Right
