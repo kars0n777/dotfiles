@@ -1,0 +1,12 @@
+! clear caps lock
+clear lock
+
+! clear Meta_L from Mod1
+clear Mod1
+add Mod1 = Alt_L Alt_R
+
+! Make escape key 'home' key (shortcut to fullscreen)
+keycode 9 = Home
+
+! Make caps lock 'ecape' key
+keycode 66 = Escape
