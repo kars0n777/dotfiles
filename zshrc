@@ -19,13 +19,17 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 
 ### "nvim" as manpager
-#export MANPAGER="nvim -c 'set ft=man' -"
+export MANPAGER="/usr/bin/nvim -c 'Man!' -o -"
  
 ### "bat" as manpager
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#export MANPAGER="sh -c 'col -bx | bat --theme Dracula -l man -p'"
+
+### "vim" as manpager
+#export MANPAGER='/bin/bash -c "vim -MRn -c \"set buftype=nofile showtabline=0 ft=man ts=8 nomod nolist norelativenumber nonu noma\" -c \"normal L\" -c \"nmap q :qa<CR>\"</dev/tty <(col -b)"'
 
 ### SET VI MODE ###
 # Comment this line out to enable default emacs-like bindings
+#
 bindkey -v
 export KEYTIMEOUT=1
 
@@ -56,6 +60,17 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
+# save path on cd
+function cd {
+    builtin cd $@
+    pwd > ~/.last_dir
+}
+
+# restore last saved path
+if [ -f ~/.last_dir ]
+    then cd `cat ~/.last_dir`
+fi
+
 # Use lf to switch directories and bind it to ctrl-o
 lfcd () {
     tmp="$(mktemp)"
@@ -68,9 +83,13 @@ lfcd () {
 }
 bindkey -s '^o' 'lfcd\n'
 
+bindkey -s '^v' 'nvim\n'
+
 bindkey -s '^g' 'gomuks\n'
 
-bindkey -s '^a' 'bc -lq\n'
+bindkey -s '^n' 'ncmpcpp\n'
+
+bindkey -s '^a' 'clear;qalc\n'
 
 bindkey -s '^f' 'cd "$(dirname "$(fzf)")"\n'
 
@@ -147,13 +166,6 @@ alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
-# confirm before overwriting something
-alias cp="cp -i"
-alias cr='cp -r'
-alias mv='mv -i'
-alias rm='rm -i'
-alias rf='rm -rf'
-
 #ls
 alias ls='exa --group-directories-first --icons'
 alias lsa='exa --group-directories-first --icons -a'
@@ -166,62 +178,58 @@ alias mkdir='mkdir -pv'
 # adding flags
 alias df='df -h'                          # human-readable sizes
 alias free='free -m'                      # show sizes in MB
-#alias vifm='./.config/vifm/scripts/vifmrun'
 
 # yt-dlp
-alias yta='yt-dlp -i '
-alias yta-flac="yt-dlp -i --extract-audio --audio-format flac "
-alias yta-opus="yt-dlp -i --extract-audio --audio-quality 0 --audio-format opus "
-alias ytv-best="yt-dlp -i -f bestvideo+bestaudio "
+alias yt='yt-dlp -i '
+alias ytflac="yt-dlp -i --extract-audio --audio-format flac "
+alias ytopus="yt-dlp -i --extract-audio --audio-quality 0 --audio-format opus "
+alias ytplay="yt-dlp -i --extract-audio --audio-quality 0 --audio-format opus -o '%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s' "
+alias ytbest="yt-dlp -i -f bestvideo+bestaudio "
 
 # Package Managers 
 alias sp='sudo pacman'
 alias p='pacman'
-alias a='paru'
+alias sa='sudo apt'
+alias a='apt'
+alias pa='paru'
 alias sf='sudo flatpak'
 alias fl='flatpak'
 alias sn='sudo pacman --noconfirm'
 alias an='paru --noconfirm'
 
-# Shortened Programs
+# General Aliases 
 alias v='nvim'
+alias vw='nvim ~/documents/vimwiki/index.md'
 alias vim='nvim'
 alias h='history 0'
 alias hs='history 0 | grep '
 alias se='sudoedit'
-alias su='sudo su'
 alias e='exit'
 alias z='zathura'
 alias pc='pokemon-colorscripts -r'
 alias lf='lfcd'
 alias sxiv='nsxiv -r -a' 
-alias s='nsxiv -r -a' 
-alias m='mpv'
 alias pm='pulsemixer'
-alias ht='htop'
-alias sma='sudo make install'
-alias lb='librewolf -p main-privacy'  
 alias mac='sudo macchanger eth0 --random'
-alias ram='~/scripts/random-manpage.sh'
 alias b='btop'
 alias ra='radeontop -c -T'
-alias i3lock='i3lock  -f -t -i ~/pictures/wallpapers/purple/wallhaven-y8e28d.png'
 alias t='wtwitch w'
+alias wt='wtwitch c'
 alias n='ncmpcpp'
-alias '8'='ncmpcpp'
 alias g='gomuks'
-
-# Git
-alias gcl='git clone'
-alias ga='git add'
-alias gco='git commit -m'                                   # make sure you add a commit message in " " 
-alias gp='git push'
-alias p2g='git add . && git commit -m "lol" && git push'    # push to git
-
-# Shell
-alias ba='bash'
-alias f='fish'
-alias zs='zsh'
+alias neofetch='clear;neofetch --ascii ~/.config/neofetch/artix-small.txt'
+alias r='~/scripts/newsboat-cache.sh'
+alias rss='newsboat'
+alias th='st & disown' # quickly opening a terminal in same directory
+alias lynx='lynx -accept_all_cookies https://lite.duckduckgo.com'
+alias '?'='w3m-duckduckgo.sh' # found in ~/scripts/w3m
+alias '??'='w3m-wiby.sh' # found in ~/scripts/w3m
+alias '???'='w3m-google.sh' # found in ~/scripts/w3m
+alias bat='bat --theme Dracula'
+alias y='ytfzf -t --ii=inv.vern.cc'
+alias k='kjv'
+alias x='nsxiv -rab'
+alias s='sncli'
 
 # Directorys
 alias c='cd'
@@ -239,10 +247,10 @@ alias re='sudo reboot'
 alias hi='loginctl hibernate'
 
 ### RANDOM COLOR SCRIPT ###
-#colorscript random
+#colorscript -r
 
-### PFETCH SYSTEM INFO ###
-#neofetch | lolcat
+### NEOFETCH SYSTEM INFO ###
+#neofetch 
 
 ### COWFORTUNE ###
 #fortune | cowsay 
@@ -254,7 +262,7 @@ pokemon-colorscripts -r
 eval "$(starship init zsh)"
 
 ### ZSH AUTOCOMPLETEION (like in fish) ###
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 ### SYNTAX HIGHLIGHTING ###
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
